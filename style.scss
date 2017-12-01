@@ -1,0 +1,301 @@
+/* fonts */
+$raleway: 'Helvetica', sans-serif;
+/* colors */
+$bgColor: #525659;
+$white: #fff;
+$groen: #8fce70;
+$rood: #fc7255;
+$blauw: #4dceff;
+$borderColor: #eaeaea;
+$totalColor: #515151;
+$titleColor: #7a7a7a;
+
+body {
+    font-family: $raleway;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vw;
+    background-color: $bgColor;
+    font-size: 0.9vw;
+    font-weight: 400;
+}
+
+main {
+    width: 90vw;
+    background-color: $white;
+    box-shadow: 0 2px 5px 1px #202020;
+    height: 50vw;
+}
+
+h1 {
+    font-size: 2.5vw;
+    font-weight: bold;
+    color: $titleColor;
+    margin: 4vw 0 3vw 3vw;
+}
+
+h2 {
+    font-size: 0.95vw;
+    width: 30vw;
+    margin-left: 3vw;
+    padding-left: 0.5vw;
+}
+
+.bold {
+    font-weight: bold;
+    margin-right: 0;
+}
+
+.inkomsten {
+    background-color: $groen;
+    color: $white;
+    font-weight: bold;
+    height: 1.5vw;
+    line-height: 1.5vw;
+}
+
+#inkomsten {
+    margin: 0 0 2vw 3vw;
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+
+    .inkomstenTitel {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 20.4vw;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    }
+
+    .inkomstenCijfer {
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 10vw;
+            box-sizing: border-box;
+            margin-left: 0.1vw;
+            text-align: right;
+            padding-right: 0.5vw;
+        }
+    }
+}
+
+.inkomstenCijfer div:nth-child(odd),
+.inkomstenTitel div:nth-child(odd),
+.totaal,
+.uitgavenCijfer div:nth-child(odd),
+.uitgavenTitel div:nth-child(odd),
+.winstCijfer div:first-child,
+.winstTitel div:first-child {
+    background-color: $borderColor;
+}
+
+.uitgaven {
+    background-color: $rood;
+    color: $white;
+    font-weight: bold;
+    height: 1.5vw;
+    line-height: 1.5vw;
+}
+
+#uitgaven {
+    margin: 0 0 2vw 3vw;
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+
+    .uitgavenTitel {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 20.4vw;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    }
+
+    .uitgavenCijfer {
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 10vw;
+            box-sizing: border-box;
+            margin-left: 0.1vw;
+            text-align: right;
+            padding-right: 0.5vw;
+        }
+    }
+}
+
+.winst {
+    background-color: $blauw;
+    color: $white;
+    font-weight: bold;
+    height: 1.5vw;
+    line-height: 1.5vw;
+}
+
+#winst {
+    margin: 0 0 2vw 3vw;
+    width: 30vw;
+    display: flex;
+    flex-direction: row;
+
+    .winstTitel {
+        display: flex;
+        flex-direction: column;
+
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 20.4vw;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    }
+
+    .winstCijfer {
+        div {
+            height: 1.5vw;
+            line-height: 1.5vw;
+            padding-left: 0.5vw;
+            width: 10vw;
+            box-sizing: border-box;
+            margin-left: 0.1vw;
+            text-align: right;
+            padding-right: 0.5vw;
+        }
+    }
+}
+
+.totaal {
+    color: $totalColor;
+    border-top: 1px solid $totalColor;
+}
+
+.taartdiagram {
+    position: relative;
+    height: 25vw;
+    width: 25vw;
+    margin-left: 50vw;
+    margin-top: -30vw;
+    animation: opacity 2s;
+}
+
+.gemeenschappelijk {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: 50%;
+}
+
+.basisschijf {
+    background-color: $groen;
+}
+
+.punt {
+    clip: rect(0px, 12.5vw, 25vw, 0);
+}
+
+.punt_1_container {
+    transform: rotate(63deg);
+    animation: winst 2s;
+}
+
+.punt_1 {
+    background-color: $blauw;
+    transform: rotate(117deg);
+}
+
+.punt_2_container {
+    transform: rotate(180deg);
+}
+
+.punt_2 {
+    background-color: $rood;
+    transform: rotate(63deg);
+    animation: uitgaven 2s;
+}
+@keyframes opacity {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.label {
+    width: 10vw;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.25vw;
+    position: absolute;
+    z-index: 2;
+}
+
+.label1 {
+    margin-top: 8vw;
+    right: 20vw;
+    opacity: 0;
+    animation: opacity1 1s ease-in-out 2s forwards;
+}
+
+.label2 {
+    margin-top: 2vw;
+    left: 18vw;
+    text-align: right;
+    opacity: 0;
+    animation: opacity2 1s ease-in-out 2.5s forwards;
+}
+
+.label3 {
+    margin-top: 16vw;
+    left: 22vw;
+    text-align: right;
+    opacity: 0;
+    animation: opacity3 1s ease-in-out 3s forwards;
+}
+@keyframes opacity1 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opacity2 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes opacity3 {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
